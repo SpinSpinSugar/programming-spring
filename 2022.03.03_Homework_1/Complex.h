@@ -22,7 +22,7 @@ public:
 	double getIm();
 	void setIm(double d);
 	void set(double x, double y);
-	void root(int n, std::ostream& stream); //туплю и не понимаю чо надо сделать
+	void root(int n, std::ostream& stream); //С‚СѓРїР»СЋ Рё РЅРµ РїРѕРЅРёРјР°СЋ С‡Рѕ РЅР°РґРѕ СЃРґРµР»Р°С‚СЊ
 	friend Complex operator*(Complex complex1, Complex complex2);
 	friend Complex operator*(double d, Complex complex);
 	friend Complex operator*(Complex complex, double d);
