@@ -123,11 +123,11 @@ bool operator>(Fraction fr1, Fraction fr2)
 bool operator<(Fraction fr1, Fraction fr2)
 {
     Fraction temp = fr1 - fr2;
-    if ((temp.numerator > 0) && (temp.denominator > 0))
+    if (!(fr1 > fr2) && (temp.numerator != 0))
     {
-        return false;
+        return true;
     }
-    return true;
+    return false;
 }
 
 bool operator>=(Fraction fr1, Fraction fr2)
