@@ -71,11 +71,14 @@ void ArrayList::pop_back() {
 }
 
 void ArrayList::push_front(const int& value) {
-    
+    if (_Size == 0) {
+        push_back(value);
+        return;
+    }
     if (_Size == _Capacity) {
         reserve(_Capacity * 2);
     }
-    for (size_t i = _Size - 1; i >= 0; --i) {
+    for (int i = _Size - 1; i >= 0; --i) {
         if (i == -1) break;
         _Array[i + 1] = _Array[i];
     }
@@ -95,20 +98,21 @@ void ArrayList::insert(const size_t& position, const int& value) {
         push_front(value);
         return;
     }
-
-    if (position >= _Size) {
-        resize(position);
-        _Array[position - 1] = value;
-        return;
-    }
     if (_Size == _Capacity) {
         reserve(_Capacity * 2);
     }
-    push_back(_Array[_Size - 1]);
+    if (position >= _Size) {
+        resize(position);
+        _Array[position] = value;
+        ++_Size;
+        return;
+    }
+    _Array[_Size] = _Array[_Size - 1];
     for (size_t i = _Size - 1; i >= position; --i) {
         _Array[i + 1] = _Array[i];
     }
     _Array[position] = value;
+    ++_Size;
 }
 
 void ArrayList::erase(const size_t& position) {
@@ -145,7 +149,7 @@ size_t ArrayList::partition(int* _Array, size_t left, size_t right) {
 
 std::ostream& operator<<(std::ostream& stream, ArrayList& list) {
     if (list.size() == 0) {
-        stream << "Empty";
+        stream << "Empty ";
         return stream;
     }
     for (size_t i = 0; i < list.size(); ++i) {
