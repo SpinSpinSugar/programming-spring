@@ -9,7 +9,10 @@ ArrayList::ArrayList(int value, size_t size) : _Array(new int[size]), _Size(size
 }
 
 ArrayList::ArrayList(int value, size_t size, size_t capacity) : _Array(new int[capacity]), _Size(size), _Capacity(capacity) {
-    memset(_Array, value, size * sizeof(int));
+    //memset(_Array, value, size * sizeof(int));
+    for (size_t i = 0; i < _Size; ++i) {
+        _Array[i] = value;
+    }
 }
 
 ArrayList::ArrayList(int* array, size_t size, size_t capacity) : _Array(new int[capacity]), _Size(size),
