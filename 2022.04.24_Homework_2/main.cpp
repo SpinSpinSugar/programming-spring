@@ -2,15 +2,15 @@
 #include "ArrayList.h"
 
 int main(int argc, char* argv[]) {
-    ArrayList c;
     //TESTS
-    //ArrayList c(2, 2);
+    ArrayList c;
     std::cout << c << "SIZE: " << c.size() << ' ' << "CAPACITY: " << c.capacity() << '\n';
     c.push_back(11); // 11
     std::cout << c << "SIZE: " << c.size() << ' ' << "CAPACITY: " << c.capacity() << '\n';
 
     c.push_front(11); // 11 11
     std::cout << c << "SIZE: " << c.size() << ' ' << "CAPACITY: " << c.capacity() << '\n';
+
     c.insert(2, 5); // 11 11 5
     std::cout << c << "SIZE: " << c.size() << ' ' << "CAPACITY: " << c.capacity() << '\n';
 
@@ -43,13 +43,12 @@ int main(int argc, char* argv[]) {
     c.sort();
     std::cout << c << "SIZE: " << c.size() << ' ' << "CAPACITY: " << c.capacity() << '\n';
     
-    /*
-    ArrayList t;
+    // COPY CONSTRUCTOR TESTS
+    ArrayList t = c;
     t.push_back(10);
-    t.push_back(20);
+    t.push_front(20);
     t.push_back(30);
     t.erase(2);
     std::cout << t << "SIZE: " << t.size() << ' ' << "CAPACITY: " << t.capacity() << '\n';
-    */
     return EXIT_SUCCESS;
 }
