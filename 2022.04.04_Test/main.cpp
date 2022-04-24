@@ -2,6 +2,7 @@
 #include "Fraction.h"
 
 int main(int argc, char* argv[]) {
+	//Fraction fr4(1, 0);
 	Fraction fr1(3, 1);
 	Fraction fr3(-6, -1);
 	Fraction fr2(5, -2);
@@ -12,6 +13,7 @@ int main(int argc, char* argv[]) {
 	std::cout << fr1.reverse() << std::endl; // (1 / fr1)
 
 	//My test
+	//std::cout << fr4;
 	//std::cout << (fr1 > fr2)  << std::endl;
 	//std::cout << (fr1 <= fr1) << std::endl;
 	//std::cout << 5 - fr2 << std::endl;

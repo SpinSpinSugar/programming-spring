@@ -13,6 +13,7 @@ public:
 	Fraction() = default;
 	Fraction(long long n, long long d) : numerator(n), denominator(d)
 	{
+		if (d == 0) throw "0/0";
 		update();
 	}
 
